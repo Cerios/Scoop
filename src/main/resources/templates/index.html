@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>test</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+</head>
+<body>
+<div th:replace="fragments/header :: header">test</div>
+
+page <p th:text="#{test.test}"/>
+
+
+<a href="/film?id=FILMTZ">Tarzan</a>
+<a href="/film?id=FILMJB">A View To Kill</a>
+<a href="/film?id=FILMK3">K3</a>
+<br/>
+<a href="/film?id=FILMNO">Null</a>
+
+<div th:replace="fragments/footer :: footer">test</div>
+</body>
+</html>

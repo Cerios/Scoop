@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    ...
+</head>
+<body>
+
+<div class="film-box" th:fragment="film-box">
+    <div th:if="${film != null}">
+        <h1 th:text="${film.title}">Film title</h1>
+        <p th:text="${film.desc}">Film description</p>
+    </div>
+
+    <div th:if="${film == null}">
+        <h1>Sorry, we couldn't find that film! :(</h1>
+    </div>
+</div>
+
+<div class="films-table" th:fragment="films-table">
+    <div th:if="${not #lists.isEmpty(films)}">
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+            </tr>
+
+            <tr th:each="film : ${films}">
+                <div th:if="${film != null}">
+                    <td th:href="@{/film(id=${film.id})}" th:text="${film.title}"></td>
+                    <td th:text="${film.desc}"></td>
+                </div>
+            </tr>
+        </table>
+    </div>
+
+    <div th:if="${#lists.isEmpty(films)}">
+        <h1>Sorry, no films found! :(</h1>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -11,6 +11,7 @@ public class ScoopApplicationTests {
 
 	@Test
 	public void contextLoads() {
+
 	}
 
 }
