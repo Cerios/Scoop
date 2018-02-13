@@ -1,0 +1,35 @@
+body {
+    overflow-y: scroll;
+    margin: 0 auto;
+    padding: 40px 0px;
+    background-color: #d1d4d8;
+}
+td {
+    border: 1px solid #000;
+}
+th {
+    border: 1px solid #000;
+    text-align: center;
+    color: #fff;
+    background: #2f2f4f;
+}
+table {
+    border: 1px solid #000;
+    border-collapse: collapse;
+    background: #CCC;
+    width: 100%;
+}
+
+/*generic card*/
+.card{
+    background-color: #fff;
+    box-shadow: 2px 2px 1px 0 #888;
+    margin-bottom: 1rem;
+    padding: .75rem;
+    border-radius: 0;
+}
+
+#jumbotime{
+	font-size: 150%;
+	text-align: center;
+}

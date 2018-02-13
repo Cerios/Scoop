@@ -24,11 +24,11 @@
                 <th>Description</th>
             </tr>
 
-            <tr th:each="film : ${films}">
-                <div th:if="${film != null}">
-                    <td th:href="@{/film(id=${film.id})}" th:text="${film.title}"></td>
+            <tr class="filmrow" th:each="film : ${films}" th:if="${film != null}">
+
+                    <td><a th:href="@{/film(id=${film.id})}"><span th:text="${film.title}"></span></a></td>
                     <td th:text="${film.summary}"></td>
-                </div>
+
             </tr>
         </table>
     </div>
@@ -37,7 +37,6 @@
         <h1>Sorry, no films found! :(</h1>
     </div>
 </div>
-
 
 </body>
 </html>

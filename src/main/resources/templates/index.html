@@ -2,20 +2,18 @@
 <head>
     <title>test</title>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
 </head>
 <body>
 <div th:replace="fragments/header :: header">test</div>
 
-page <p th:text="#{test.test}"/>
+<!--page <p th:text="#{test.test}"/>-->
 
+<span id="jumbotime" th:if="${time != null}" th:text="${time}">></span>
 
-<a href="/film?id=FILMTZ">Tarzan</a> <br />
-<a href="/film?id=FILMJB">A View To Kill</a> <br />
-<a href="/film?id=FILMK3">K3</a> <br />
-<br/>
-<a href="/film?id=FILMNO">Null</a><br/>
+<div th:replace="fragments/film :: films-table"></div>
 
 <div th:replace="fragments/footer :: footer">test</div>
 </body>

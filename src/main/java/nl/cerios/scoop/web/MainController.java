@@ -1,9 +1,11 @@
 package nl.cerios.scoop.web;
 
+import nl.cerios.scoop.service.FilmService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 /**
  * Created by dwhelan on 12/02/2018.
@@ -11,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MainController {
     //Logic
-    @RequestMapping(value = "/index")
+    @RequestMapping(value = "/indexx")
     public ModelAndView index() {
         //logic.films ophalen(vandaag)
         //
@@ -19,6 +21,7 @@ public class MainController {
 
         return new ModelAndView("index");
     }
+
     @RequestMapping(value = "/login")
     public ModelAndView login() {
         return new ModelAndView("login");
