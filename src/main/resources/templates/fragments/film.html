@@ -8,7 +8,7 @@
 <div class="film-box" th:fragment="film-box">
     <div th:if="${film != null}">
         <h1 th:text="${film.title}">Film title</h1>
-        <p th:text="${film.desc}">Film description</p>
+        <p th:text="${film.summary}">Film description</p>
     </div>
 
     <div th:if="${film == null}">
@@ -27,7 +27,7 @@
             <tr th:each="film : ${films}">
                 <div th:if="${film != null}">
                     <td th:href="@{/film(id=${film.id})}" th:text="${film.title}"></td>
-                    <td th:text="${film.desc}"></td>
+                    <td th:text="${film.summary}"></td>
                 </div>
             </tr>
         </table>
