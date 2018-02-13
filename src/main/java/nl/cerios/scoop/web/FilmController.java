@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 /**
@@ -45,7 +46,9 @@ public class FilmController {
 
         ArrayList<Film> films = filmService_.getFilms();
         model.addAttribute("films", films);
-        model.addAttribute("time", java.time.LocalDateTime.now());
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("dd-MM-uuuu");
+
+        model.addAttribute("time", java.time.LocalDateTime.now().format(df));
 
         return new ModelAndView("index");
     }
