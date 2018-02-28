@@ -15,10 +15,12 @@ public class FilmService {
 
     ArrayList<Film> filmArrayList_;
 
-    public FilmService()
-    {
+    public FilmService() {
         filmArrayList_ = new ArrayList<Film>();
+        initTestFilms();
+    }
 
+    private void initTestFilms() {
         Film JB = new Film();
         JB.setId("FILMJB");
         JB.setTitle("A View to a Kill");
@@ -39,19 +41,17 @@ public class FilmService {
         filmArrayList_.add(TZ);
     }
 
-    //TODO: @Bean?
-    public Film getFilm(String id)
-    {
-        Film found = null;
+    public Film getFilm(String id) {
+        Film foundFilm = null;
 
-        for (Film f : filmArrayList_)
-        {
-            if (f.getId().equals(id)){
-                found = f;
+        for (Film f : filmArrayList_) {
+            if (f.getId().equalsIgnoreCase(id)) {
+                foundFilm = f;
+                break;
             }
         }
 
-        return found;
+        return foundFilm;
     }
 
     //Hashset??

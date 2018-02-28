@@ -19,8 +19,7 @@ public class FilmFactory {
         else return null;
     }
 
-    public static boolean validateFilm(Film f)
-    {
+    public static boolean validateFilm(Film f) {
         boolean validFilm = false;
 
         if (f.getId() == null &&

@@ -15,7 +15,7 @@ public class Film  {
     public Film() {}
 
     public void setId(String id) { id_ = id; }
-    public void setTitle(String title) {title_ = title; }
+    public void setTitle(String title) { title_ = title; }
     public void setSummary(String summary) { summary_ = summary; }
 
     public String getId(){ return id_ ;}

@@ -1,8 +1,10 @@
 package nl.cerios.scoop.web;
 
 import nl.cerios.scoop.domain.Film;
+import nl.cerios.scoop.domain.Show;
 import nl.cerios.scoop.service.FilmService;
 
+import nl.cerios.scoop.service.ShowService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,6 +26,9 @@ public class FilmController {
     @Autowired
     FilmService filmService_;
 
+    @Autowired
+    ShowService showService_;
+
     @RequestMapping("/films")
     public ModelAndView films(Model model) {
         //Get film or null
@@ -44,12 +49,26 @@ public class FilmController {
     @RequestMapping("/index")
     public ModelAndView indexPage(Model model) {
 
-        ArrayList<Film> films = filmService_.getFilms();
-        model.addAttribute("films", films);
+        ArrayList<Show> shows = showService_.sortShowsByTime(showService_.getShowsToday());
+        model.addAttribute("shows", shows);
+
         DateTimeFormatter df = DateTimeFormatter.ofPattern("dd-MM-uuuu");
 
         model.addAttribute("time", java.time.LocalDateTime.now().format(df));
 
         return new ModelAndView("index");
+    }
+
+    @RequestMapping("/agenda")
+    public ModelAndView agendaPage(Model model) {
+
+        ArrayList<Show> shows = showService_.sortShowsByTime(showService_.getShowsToday());
+        model.addAttribute("shows", shows);
+
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("dd-MM-uuuu");
+
+        model.addAttribute("time", java.time.LocalDateTime.now().format(df));
+
+        return new ModelAndView("redirect:index");
     }
 }

@@ -4,17 +4,23 @@
     ...
 </head>
 <body>
-
-<div th:fragment="header" class="navbar navbar-fixed-top" style="background:blue">
+<div th:fragment="header" id="header" class="navbar navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/index">My project</a>
+            <a class="navbar-brand" href="/index">Cerios Scoop</a>
         </div>
+
         <div class="navbar-collapse collapse">
-            NAVBAR
+            | <a href="/films">Films</a>
+            | <a href="/halls">Halls</a>
+            | <a href="/shows">Shows</a>
+            | <a href="/film?id=x">Film</a>
+            | <a href="/hall?id=x">Hall</a>
+            | <a href="/show?id=x">Show</a>
+            |
         </div>
     </div>
 </div>

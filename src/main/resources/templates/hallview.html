@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>test</title>
+    <title>Hall View</title>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/base.css"/>
     <script src="js/jquery.js"></script>
@@ -8,13 +8,11 @@
 </head>
 <body>
 <div th:replace="fragments/header :: header">test</div>
+<br/>
 
-<!--page <p th:text="#{test.test}"/>-->
+<div th:replace="fragments/hall :: hall-box"/>
 
-<span id="jumbotime" th:if="${time != null}" th:text="${time}">></span>
-
-<div th:replace="fragments/show :: shows-table"></div>
-
+<br/>
 <div th:replace="fragments/footer :: footer">test</div>
 </body>
 </html>

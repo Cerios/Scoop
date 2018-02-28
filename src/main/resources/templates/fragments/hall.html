@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    ...
+</head>
+<body>
+
+<div class="hall-box" th:fragment="hall-box">
+    <div th:if="${hall != null}">
+        <h1 th:text="${hall.name}">Hall name</h1>
+        <p th:text="${hall.seats}">Hall Seats</p>
+    </div>
+
+    <div th:if="${hall == null}">
+        <h1>Sorry, we couldn't find that hall! :(</h1>
+    </div>
+</div>
+
+<div class="halls-table" th:fragment="halls-table">
+    <div th:if="${not #lists.isEmpty(halls)}">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Seats</th>
+            </tr>
+
+            <tr class="hallrow" th:each="hall : ${halls}" th:if="${hall != null}">
+
+                <td><a th:href="@{/hall(id=${hall.id})}"><span th:text="${hall.name}"></span></a></td>
+                <td th:text="${hall.seats}"></td>
+
+            </tr>
+        </table>
+    </div>
+
+    <div th:if="${#lists.isEmpty(halls)}">
+        <h1>Sorry, no halls found! :(</h1>
+    </div>
+</div>
+
+</body>
+</html>

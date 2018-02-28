@@ -1,6 +1,9 @@
 package nl.cerios.scoop.web;
 
+import nl.cerios.scoop.domain.Hall;
 import nl.cerios.scoop.service.FilmService;
+import nl.cerios.scoop.service.HallService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +15,9 @@ import org.springframework.web.servlet.view.RedirectView;
  */
 @Controller
 public class MainController {
+
     //Logic
+    //index here is disabled to allow Filmcontroller to do work
     @RequestMapping(value = "/indexx")
     public ModelAndView index() {
         //logic.films ophalen(vandaag)
